@@ -1,0 +1,52 @@
+
+
+<html>
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   
+  </head>
+  <body>
+      <h1> Map example </h1>
+      
+    <div id="regions_div" style="width: 900px; height: 500px;"></div>
+       <script type="text/javascript">
+      google.charts.load('current', {'packages':['geochart']});
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'Cost of citizenship in usd'],
+          ['Cyprus', 250000],
+          ['Dominican republic', 100000],
+          ['Grenada', 250000],
+          ['Malta', 1150000],
+          ['Australia', 500000],
+          ['Bulgaria', 500000],
+          ['Canada', 800000],
+          ['France', 10000000],
+          ['Greece', 250000],
+          ['Hungary', 250000],
+          ['Ireland', 500000],
+          ['Latvia', 35000],
+          ['New Zealand', 1500000],
+          ['Portugal', 500000],
+          ['Singapore', 2500000],
+          ['Spain', 500000],
+          ['Switzerland', 250000],
+          ['United Kingdom', 1000000],
+          ['United States', 500000]
+        ]);
+
+        var options = {
+            colorAxis: {colors: ['#00853f', 'black', '#e31b23']},
+        };
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+
+      }
+    </script>
+  </body>
+</html>
